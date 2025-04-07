@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Username</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class ="container">
+    <h1>Documentation</h1>
+    <br></br>
+    <br></br>    
+    
+    <form action = "/about"   method = "POST" id="forma">
+
+      <div class="mb-3">
+        <label for="application"><b>Choose an Application Type :</b></label>
+         <select id="application" name="application">
+             <option value="documentRelease">Please choose one</option>
+             <option value="documentRelease">Document Release</option>
+             <option value="exemption">Medical or Exemption</option>
+             <option value="preTrial">PreTrial</option>
+             <option value="settlement">Settlement</option>
+             <option value="procecution">Procecution</option>              
+         </select>
+      </div>   
+      <br>
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><b>Judge Name</b></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder= "Add Judge Name" name='judgeName' value="{{judgeName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Court Name or Location</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Court Name" name='courtName' value="{{courtName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Court Location</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Court Location" name='courtLocation' value="{{courtLocation}}">
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Petitioner Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Petitioner Name" name='petitionerName' value="{{petitionerName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Petitioner Address</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Petitioner Address" name='petitionerAddress' value="{{petitionerAddress}}">
+      </div> 
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Petitioner Relative Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Petitioner Relative Name" name='petitionerRelativeName' value="{{petitionerRelativeName}}">
+      </div>     
+      
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Accused Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Accussed Name" name='accussedName' value="{{accussedName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Accused Address</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Accused Address" name='accussedAddress' value="{{accussedAddress}}">
+      </div> 
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Accused Relative Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Accused Relative Name" name='accussedRelativesName' value="{{accussedRelativesName}}">
+      </div>          
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>FIR Number</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add FIR Number" name='FIRNumber' value="{{FIRNumber}}">
+      </div>         
+      
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Police Station Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Police Station Name" name='policeStationName' value="{{policeStationName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Under Section</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Under Section" name='underSection' value="{{underSection}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Next Date Of Hearing</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Next Date Of Hearing" name='NDOH' value="{{NDOH}}">
+      </div> 
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Place Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Place Name" name='Place' value="{{Place}}">
+      </div>      
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Current Date</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Current Date" name='currentDate' value="{{currentDate}}">
+      </div> 
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Applicant Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Applicant Name" name='applicantName' value="{{applicantName}}">
+      </div>  
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><b>Council Name</b></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder= "Add Council Name" name='councilName' value="{{councilName}}">
+      </div>       
+
+      <br></br>
+      <button type="submit" class="btn btn-secondary"><b>Submit</b></button>
+      <div class="container" id = "saved">
+        
+      </div>
+    </form>
+
+    <style>
+      body    
+          {
+          background-image: url({{url_for('static',filename= 'books-5937823_640.jpg')}})
+          }
+    </style>
+    <script>
+        // Handle form submission
+        document.getElementById('forma').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from submitting normally
+
+            // Prepare form data
+            let formData = new FormData(this);
+
+            // Send a POST request to the /check-username endpoint
+            fetch('/about', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // If the response contains an error, show it in a pop-up
+                if (data.error) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: data.error,
+                        icon: 'Success',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: data.message,
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Document is ready please collect at present path!',
+                    icon: 'Success',
+                    confirmButtonText: 'OK'
+                });
+            });
+        });
+    </script>
+    
+    
+  </div>
+</body>
+</html>
+{% endblock %}
+
