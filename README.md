@@ -74,7 +74,7 @@ mysql -u your_username -p < database_setup.sql
 ![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Dosumentation2.PNG)
 
 
-##IPC/BNS Search
+## IPC/BNS Search
 ![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Find.PNG)
 
 
