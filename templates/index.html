@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class = "container">
+    <h1>Welcome to IPC sections</h1>
+    <br/>
+    <li>User Login</li> 
+    <br/>
+    <form action = "/"   method = "POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Input</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder= "Add User Name" name='userName' value="{{userName}}">
+        </div>
+
+        <div class="mb-3">
+            <label for = "exampleInputEmail1" class="form-label">Password</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder= "password" name='password' value="{{password}}">
+        </div>
+        
+        <br/>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+        <div class="container">
+        <br/> <br/>
+        </div>
+      </form>                    
+      {{message}}
+  </div>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+Caption_Creator
+flask_sqlalchemy
+flask
+reportlab
+Pillow
+django

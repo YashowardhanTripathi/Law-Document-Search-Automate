@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Username</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1>Welcome to IPC sections</h1>
+    <br/>
+    <li>User Login</li> 
+    <br/>
+    <form action = "/"   method = "POST" id="usernameForm">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Input</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder= "Add User Name" name='userName' value="{{userName}}">
+        </div>
+
+        <div class="mb-3">
+            <label for = "exampleInputEmail1" class="form-label">Password</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder= "password" name='password' value="{{password}}">
+        </div>
+        
+        <br/>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+        <div class="container">
+        <br/> <br/>
+        </div>
+      </form>  
+
+    <style>
+        body    
+            {
+            background-image: url({{url_for('static',filename= 'HomePage.png')}})
+            }
+    </style>
+
+    <script>
+        // Handle form submission
+        document.getElementById('usernameForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from submitting normally
+
+            // Prepare form data
+            let formData = new FormData(this);
+
+            // Send a POST request to the /check-username endpoint
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // If the response contains an error, show it in a pop-up
+                if (data.error) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: data.error,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: data.message,
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'An unexpected error occurred.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class = "container">
+    <br/><br/>
+    <h1>ADD USER</h1>   
+    
+    <br/>
+    <form action = "/form"   method = "POST">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder= "User Name" name='User_Name' value="{{Sections_code}}">
+        </div>
+
+        <div class="mb-3">
+            <label for = "exampleInputEmail1" class="form-label"></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder= "Password" name='Password' value="{{Section_Number}}">
+        </div>
+
+        <div class="mb-3">
+          <label for = "exampleInputEmail1" class="form-label"></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder= "Confirm Password" name='Confirm_Password' value="{{Section_Number}}">
+        </div>
+        <div>
+          <img src="{{ url_for('captcha') }}" alt="CAPTCHA">
+        </div>
+        <div>
+          Enter CAPTCHA:<br>
+          <input type="text" name="captcha" required>
+        </div>        
+        
+        <br/>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+      <style>
+        body    
+            {
+            background-image: url({{url_for('static',filename= 'HomePage.png')}})
+            }
+      </style>
+   
+      {{ error_statement }}
+    
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul>
+          {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+  </div>
+{% endblock %}
