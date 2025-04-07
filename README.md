@@ -60,7 +60,21 @@ pip install -r requirements.txt
 mysql -u your_username -p < database_setup.sql
 
 
-![Homepage Screenshot](Images/Home_Page.png)
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Home_Page.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Add_User.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Dosumentation.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Dosumentation2.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Find.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/IPC_Result.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Application_Result.PNG)
+
+![Homepage Screenshot](https://github.com/YashowardhanTripathi/Law-Document-Search-Automate/blob/main/Images/Application_Result2.PNG)
 
 
 
